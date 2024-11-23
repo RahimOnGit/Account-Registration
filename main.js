@@ -32,17 +32,24 @@ pass_field.addEventListener("input",()=>
     {
         if(pass_field.value.length< 7)
         {
-pass_field.classList.add("error")
+pass_field.classList.remove("error");
+            pass_field.classList.add("error");
+
+
         }
         else
         {
             pass_field.classList.remove("error")
+            pass_field.classList.add("error");
         }
     })
 
 //confirm password field
     let cpass_field = document.querySelector("#conf-pass") 
     let sign_button = document.querySelector("#sign-up-button");
+ sign_button.disabled = true
+
+
 
 cpass_field.addEventListener("input",()=>{
     if(pass_field.value===cpass_field.value)
@@ -56,7 +63,9 @@ cpass_field.addEventListener("input",()=>{
         cpass_field.classList.add("error")
         sign_button.disabled = true
     }
-})
+});
+
+
 
 // to add 2 event listeners 
 
@@ -79,17 +88,8 @@ cpass_field.addEventListener("input",()=>{
 //
 
 let name_f = document.querySelector("#name");
-
 let mail_f = document.querySelector("#mail");
-
 let username_f = document.querySelector("#username");
-
-
-
-
-
-
-
 
 const form = document.querySelector("form");
 form.addEventListener("submit",(event)=> {
